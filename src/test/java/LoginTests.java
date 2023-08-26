@@ -27,11 +27,11 @@ public class LoginTests extends BaseTest {
         WebElement passwordInput = driver.findElement(By.cssSelector("[type='password']"));
         passwordInput.click();
         passwordInput.clear();
-        WebElement submitLogin = driver.findElement(By.cssSelector("[type='submit']"));
-        submitLogin.click();
+        WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+        loginButton.click();
 
         Assert.assertEquals(driver.getCurrentUrl(), loginUrl, "Wrong login url shows after unsuccessful login");
-        Assert.assertTrue(submitLogin.isDisplayed(), "Submit button is not displayed");
+        Assert.assertTrue(loginButton.isDisplayed(), "Login button is not displayed");
         driver.quit();
     }
 
@@ -58,11 +58,11 @@ public class LoginTests extends BaseTest {
         passwordInput.clear();
         emailInput.sendKeys("te$t$tudent");
 
-        WebElement submitLogin = driver.findElement(By.cssSelector("[type='submit']"));
-        submitLogin.click();
+        WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+        loginButton.click();
 
         Assert.assertEquals(driver.getCurrentUrl(), loginUrl, "Wrong login url shows after unsuccessful login");
-        Assert.assertTrue(submitLogin.isDisplayed(), "Submit button is not displayed");
+        Assert.assertTrue(loginButton.isDisplayed(), "Login button is not displayed");
         driver.quit();
     }
 
@@ -89,11 +89,11 @@ public class LoginTests extends BaseTest {
         passwordInput.clear();
         emailInput.sendKeys("IncorrectPassword");
 
-        WebElement submitLogin = driver.findElement(By.cssSelector("[type='submit']"));
-        submitLogin.click();
+        WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+        loginButton.click();
 
         Assert.assertEquals(driver.getCurrentUrl(), loginUrl, "Wrong login url shows after unsuccessful login");
-        Assert.assertTrue(submitLogin.isDisplayed(), "Submit button is not displayed");
+        Assert.assertTrue(loginButton.isDisplayed(), "Login button is not displayed");
         driver.quit();
     }
 
@@ -120,8 +120,8 @@ public class LoginTests extends BaseTest {
         passwordInput.clear();
         passwordInput.sendKeys("te$t$tudent");
 
-        WebElement submitLogin = driver.findElement(By.cssSelector("[type='submit']"));
-        submitLogin.click();
+        WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
+        loginButton.click();
 
         WebElement avatar = driver.findElement(By.cssSelector("[class='avatar']"));
         Assert.assertTrue(avatar.isDisplayed(), "Avatar icon is not displayed");
